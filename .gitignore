@@ -1,9 +1,9 @@
-/TucaAndBertie/[Ll]ibrary/
-/TucaAndBertie/[Tt]emp/
-/TucaAndBertie/[Oo]bj/
-/TucaAndBertie/[Bb]uild/
-/TucaAndBertie/[Bb]uilds/
-/TucaAndBertie/Assets/AssetStoreTools*
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+Assets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
