@@ -6,40 +6,74 @@ using UnityEngine;
 public class animationDialogue : MonoBehaviour
 {
     public TextMeshProUGUI text;
+    public TextMeshProUGUI whosTalking;
     public string[] sentences;
     public GameObject talk;
     public GameObject notTalking;
+    public GameObject talk2;
+    public GameObject notTalking2;
     private int index;
 
-    IEnumerator Type() 
+    private void Awake()
     {
-        foreach (char letters in sentences[index].ToCharArray()) 
-        {
-            talk.SetActive(true);
-            notTalking.SetActive(false);
-            text.text += letters;
-            yield return new WaitForSeconds(.02f);
-
-        }
+        text.text = "";
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         StartCoroutine(Type());
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (text.text == sentences[index])
         {
-            notTalking.SetActive(true);
-            talk.SetActive(false);
+            if (index % 2 == 0)
+            {
+                talk.SetActive(false);
+                notTalking.SetActive(true);
+            }
+            else
+            {
+                talk2.SetActive(false);
+                notTalking2.SetActive(true);
+            }
 
             if (Input.GetMouseButton(0))
             {
                 NextSentence();
             }
+        }
+    }
+
+    IEnumerator Type()
+    {
+        foreach (char letters in sentences[index].ToCharArray())
+        {
+            if (index % 2 == 0)
+            {
+                whosTalking.text = "character 1";
+
+                talk.SetActive(true);
+                notTalking.SetActive(false);
+
+                talk2.SetActive(false);
+                notTalking2.SetActive(false);
+            }
+            else
+            {
+                whosTalking.text = "character 2";
+
+                talk2.SetActive(true);
+                notTalking2.SetActive(false);
+
+                talk.SetActive(false);
+                notTalking.SetActive(false);
+            }
+            text.text += letters;
+            yield return new WaitForSeconds(.02f);
+
         }
     }
 
