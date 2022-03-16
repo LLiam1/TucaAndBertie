@@ -11,7 +11,7 @@ public class RoomSelector : MonoBehaviour
     private Vector3 touchPosWorld;
 
     //Camera Start Position
-    private Transform startPos;
+    public Transform startPos;
 
     //Camera Target Position
     private Transform targetPos;
@@ -28,7 +28,7 @@ public class RoomSelector : MonoBehaviour
     //Normal Orthographic Size
     private float orthographicNormalSize = 5f;
 
-
+    public float smooth;
 
     private void Start()
     {
@@ -65,6 +65,11 @@ public class RoomSelector : MonoBehaviour
             currentPos = cam.transform;
         }
 
+        if(selectedRoom != null)
+        {
+            targetPos = selectedRoom.transform;
+        }
+
 
         //TODO: Zoom Camera In ON Selected Room
 
@@ -73,7 +78,7 @@ public class RoomSelector : MonoBehaviour
             if (Vector3.Distance(cam.transform.position, targetPos.position) > 1f)
             {
                 cam.transform.position = Vector3.Lerp(startPos.transform.position,
-                    new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, -10f), Time.deltaTime * 1.25f);
+                    new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, -10f), Time.deltaTime * smooth);
 
                 //if (orthographicNormalSize - orthographicTargetSize > 0.25f)
                 //{
@@ -85,7 +90,7 @@ public class RoomSelector : MonoBehaviour
         } else
         {
             cam.transform.position = Vector3.Lerp(currentPos.transform.position,
-                   startPos.transform.position, Time.deltaTime * 1.25f);
+                   startPos.transform.position, Time.deltaTime * smooth);
 
             cam.orthographicSize = orthographicNormalSize;
         }
