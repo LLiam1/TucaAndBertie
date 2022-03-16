@@ -6,10 +6,10 @@ using TMPro;
 
 public class menuTest : MonoBehaviour
 {
-    public GameObject pauseButton;
+    public GameObject locButton;
     public GameObject menu;
     public GameObject refMid;
-    public GameObject pauseLoc;
+    public GameObject returnPos;
     
     void Start()
     {
@@ -23,14 +23,17 @@ public class menuTest : MonoBehaviour
 
     public void unPause()
     {
-        pauseButton.transform.position = pauseLoc.transform.position;
+        //closing the menu from the button causes the menu to go offscreen
+        //and the pause button comes back to the screen
+        locButton.transform.position = returnPos.transform.position;
         //pauseButton.transform.position = new Vector2(655, 1239);
         menu.transform.position = new Vector2(999,999);
     }
 
     public void onTap()
     {
-        pauseButton.transform.position = new Vector2(999, 999);
+        //moves the button offscreen and places the menu on the screen
+        locButton.transform.position = new Vector2(999, 999);
         menu.transform.position = refMid.transform.position;
     }
 }
