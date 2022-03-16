@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dialogueAnimation.unity
     guid: 8dbed0d7edfc15e4db54588267ff25db
+  - enabled: 1
+    path: Assets/Scenes/testCreation.unity
+    guid: c5c764a3001d27646888f9d6123c159a
   m_configObjects: {}
