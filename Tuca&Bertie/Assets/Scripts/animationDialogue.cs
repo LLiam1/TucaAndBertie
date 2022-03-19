@@ -28,7 +28,8 @@ public class animationDialogue : MonoBehaviour
     private Vector3 onScreen = new Vector3(0.0f, 0.0f, 0.0f);
 
     //animation timer
-    private float time = 3.5f;
+    private float time = 1.5f;
+
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class animationDialogue : MonoBehaviour
 
     void Start()
     {
-        whosTalking.text = "Tuca";
+        whosTalking.text = "Bertie";
         StartCoroutine(Type());
     }
 
@@ -72,6 +73,59 @@ public class animationDialogue : MonoBehaviour
 
     IEnumerator Type()
     {
+        yield return new WaitForSeconds(time);
+
+        //type effect
+        foreach (char letters in sentences[index].ToCharArray())
+        {
+            //check which sentence to see who was talking
+            if (index % 2 == 0)
+            {
+                //change character box
+                whosTalking.text = "Bertie";
+
+                //handle talking and not talking animations
+                talk.SetActive(true);
+                notTalking.SetActive(false);
+
+                talk2.SetActive(false);
+            }
+            else
+            {
+                //change character box
+                whosTalking.text = "Tuca";
+
+                //handle talking and not talking animations
+                talk2.SetActive(true);
+                notTalking2.SetActive(false);
+
+                talk.SetActive(false);
+            }
+            text.text += letters;
+            yield return new WaitForSeconds(.02f);
+
+        }
+    }
+
+    //swap character animations
+    IEnumerator SwapCharacter(GameObject character, Vector3 targetPosition, float duration)
+    {
+       float time = 0;
+       Vector3 startPos = character.transform.position;
+
+       while (time < duration)
+       {
+            character.transform.position = Vector3.Lerp(startPos, targetPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+       }
+
+       character.transform.position = targetPosition;
+
+    }
+
+    private void NextSentence()
+    {
         //swap characters
         notTalking.SetActive(true);
         notTalking2.SetActive(true);
@@ -87,56 +141,6 @@ public class animationDialogue : MonoBehaviour
             StartCoroutine(SwapCharacter(notTalking2, onScreen, time));
         }
 
-        //type effect
-        foreach (char letters in sentences[index].ToCharArray())
-        {
-            //check which sentence to see who was talking
-            if (index % 2 == 0)
-            {
-                //change character box
-                whosTalking.text = "Tuca";
-
-                //handle talking and not talking animations
-                talk.SetActive(true);
-                notTalking.SetActive(false);
-
-                talk2.SetActive(false);
-            }
-            else
-            {
-                //change character box
-                whosTalking.text = "character 2";
-
-                //handle talking and not talking animations
-                talk2.SetActive(true);
-                notTalking2.SetActive(false);
-
-                talk.SetActive(false);
-            }
-            text.text += letters;
-            yield return new WaitForSeconds(.02f);
-
-        }
-    }
-
-    //swap character animations
-    IEnumerator SwapCharacter(GameObject character, Vector3 targetPosition, float duration) 
-    {
-        float time = 0;
-        Vector3 startPos = character.transform.position;
-
-        while (time < duration)
-        {
-            character.transform.position = Vector3.Lerp(startPos, targetPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-
-        character.transform.position = targetPosition;
-    }
-
-    private void NextSentence() 
-    {
         if (index < sentences.Length - 1)
         {
             index++;
