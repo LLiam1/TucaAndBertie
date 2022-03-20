@@ -10,11 +10,14 @@ public class menuTest : MonoBehaviour
     public GameObject menu;
     public GameObject refMid;
     public GameObject returnPos;
-    
+
+    public GameObject currency;
+
     void Start()
     {
         //On Start Keep Menu Closed
         menu.SetActive(false);
+        currency.SetActive(false);
         
     }
 
@@ -35,6 +38,14 @@ public class menuTest : MonoBehaviour
 
         //Just Set the Button to inactve Instead of moving it far off-screen
         menu.SetActive(false);
+
+        currency.SetActive(false);
+
+
+
+        //Disable Room Selector
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = true;
+
     }
 
     public void onTap()
@@ -44,6 +55,14 @@ public class menuTest : MonoBehaviour
         //menu.transform.position = refMid.transform.position;
 
         menu.SetActive(true);
-        locButton.SetActive(false);
+        //locButton.SetActive(false);
+
+        currency.SetActive(true);
+
+
+
+        //Disable Room Selector
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = false;
+
     }
 }

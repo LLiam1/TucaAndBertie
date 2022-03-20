@@ -46,4 +46,19 @@ public class currency : MonoBehaviour
         nameT = itemName;
         money -= itemPrice;
     }
+
+    public void PurchaseItem(Item item)
+    {
+        if (money >= item.itemPrice)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(item);
+
+            money -= item.itemPrice;
+        }
+        else
+        {
+            Debug.Log("Not Enough Money!");
+        }
+    }
+        
 }

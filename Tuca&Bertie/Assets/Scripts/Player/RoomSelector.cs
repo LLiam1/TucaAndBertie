@@ -40,6 +40,8 @@ public class RoomSelector : MonoBehaviour
     //GameObject: Canvas
     public GameObject canvas;
 
+    //Bool: Disable Room Selector
+    public bool isSelectorActive;
 
     private void Start()
     {
@@ -51,7 +53,7 @@ public class RoomSelector : MonoBehaviour
 
     public void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && isSelectorActive)
         {
             //Transform Touch to World Point
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -129,6 +131,5 @@ public class RoomSelector : MonoBehaviour
     {
         selectedRoom = null;
     }
-
 
 }
