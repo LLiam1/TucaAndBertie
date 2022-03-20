@@ -156,7 +156,8 @@ MonoBehaviour:
   startPos: {fileID: 0}
   cam: {fileID: 519420031}
   orthographicTargetSize: 0.75
-  smooth: 1.25
+  smooth: 2.25
+  ogSmooth: 4.15
 --- !u!4 &27250228
 Transform:
   m_ObjectHideFlags: 0
@@ -203,13 +204,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.05
   maxDist: 0.1
+  idleTimer: 0
+  maxIdleTime: 0
   cState: 0
   startPos: {x: 0, y: 0}
   destPos: {x: 0, y: 0}
   isDestSet: 0
   isDestReached: 0
-  timer: 0
-  maxTimer: 5
 --- !u!50 &78920358
 Rigidbody2D:
   serializedVersion: 4
@@ -1130,13 +1131,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.05
   maxDist: 0.1
+  idleTimer: 0
+  maxIdleTime: 0
   cState: 0
   startPos: {x: 0, y: 0}
   destPos: {x: 0, y: 0}
   isDestSet: 0
   isDestReached: 0
-  timer: 0
-  maxTimer: 5
 --- !u!50 &654960503
 Rigidbody2D:
   serializedVersion: 4
@@ -1641,13 +1642,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.05
   maxDist: 0.1
+  idleTimer: 0
+  maxIdleTime: 0
   cState: 0
   startPos: {x: 0, y: 0}
   destPos: {x: 0, y: 0}
   isDestSet: 0
   isDestReached: 0
-  timer: 0
-  maxTimer: 5
 --- !u!50 &1165780002
 Rigidbody2D:
   serializedVersion: 4
@@ -1849,13 +1850,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.05
   maxDist: 0.1
+  idleTimer: 0
+  maxIdleTime: 0
   cState: 0
   startPos: {x: 0, y: 0}
   destPos: {x: 0, y: 0}
   isDestSet: 0
   isDestReached: 0
-  timer: 0
-  maxTimer: 5
 --- !u!50 &1296129027
 Rigidbody2D:
   serializedVersion: 4
