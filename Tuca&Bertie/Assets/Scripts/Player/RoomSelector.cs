@@ -34,9 +34,12 @@ public class RoomSelector : MonoBehaviour
     //Float: Orthographic Camera Smooth
     public float ogSmooth;
 
-    //
+    //Vector3: Cam Starting Pos
     public Vector3 camStartPos;
-    
+
+    //GameObject: Canvas
+    public GameObject canvas;
+
 
     private void Start()
     {
@@ -107,6 +110,17 @@ public class RoomSelector : MonoBehaviour
 
                 cam.orthographicSize = orthographicNormalSize;
             }
+        }
+
+        //Check if a Room is Selected
+        if(selectedRoom != null)
+        {
+            //Set Active
+            canvas.SetActive(true);
+        } else
+        {
+            //Set Inactive
+            canvas.SetActive(false);
         }
 
     }

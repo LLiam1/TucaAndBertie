@@ -23,6 +23,16 @@ public class currency : MonoBehaviour
                     itemPrice = 10;
                     break;
                 }
+            case "test20":
+                {
+                    itemPrice = 20;
+                    break;
+                }
+            case "test30":
+                {
+                    itemPrice = 30;
+                    break;
+                }
         }
     }
 
