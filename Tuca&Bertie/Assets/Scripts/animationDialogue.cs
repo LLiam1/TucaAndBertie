@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class animationDialogue : MonoBehaviour
@@ -160,6 +161,9 @@ public class animationDialogue : MonoBehaviour
         else
         {
             text.text = "";
+
+            //Next Scene  - Main Scene
+            SceneManager.LoadScene("SampleScene");
         }
     }
 }

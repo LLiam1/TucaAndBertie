@@ -4,41 +4,56 @@ using UnityEngine;
 
 public class RoomSelector : MonoBehaviour
 {
-    //Selected Room...
+    //GameObject: Selected Room...
     public GameObject selectedRoom;
 
-    //Input Touch Position
+    //Vector3: Input Touch Position
     private Vector3 touchPosWorld;
 
-    //Camera Start Position
+    //Transform: Camera Start Position
     public Transform startPos;
 
-    //Camera Target Position
+    //Transform: Camera Target Position
     private Transform targetPos;
 
-    //Camera Current Pos
+    //Transform: Camera Current Pos
     private Transform currentPos;
 
-    //Camera Object
+    //Camera: Game Object
     public Camera cam;
 
-    //Orthographic Target Size
-    public float orthographicTargetSize = 2.25f;
+    //Float: Orthographic Target Size
+    public float orthographicTargetSize = 1.189422f;
 
-    //Normal Orthographic Size
+    //Float: Normal Orthographic Size
     private float orthographicNormalSize = 5f;
 
+    //Float: Variable to Smooth Calculation of Zoom IN/OUT
     public float smooth;
+
+    //Float: Orthographic Camera Smooth
+    public float ogSmooth;
+
+    //Vector3: Cam Starting Pos
+    public Vector3 camStartPos;
+
+    //GameObject: Canvas
+    public GameObject canvas;
+
+    //Bool: Disable Room Selector
+    public bool isSelectorActive;
 
     private void Start()
     {
         //Set Starting Camera Position
         startPos = cam.transform;
+
+        camStartPos = cam.transform.position;
     }
 
     public void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && isSelectorActive)
         {
             //Transform Touch to World Point
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -65,34 +80,49 @@ public class RoomSelector : MonoBehaviour
             currentPos = cam.transform;
         }
 
-        if(selectedRoom != null)
-        {
-            targetPos = selectedRoom.transform;
-        }
-
-
-        //TODO: Zoom Camera In ON Selected Room
-
         if (selectedRoom != null)
         {
+            targetPos = selectedRoom.transform;
+
             if (Vector3.Distance(cam.transform.position, targetPos.position) > 1f)
             {
                 cam.transform.position = Vector3.Lerp(startPos.transform.position,
                     new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, -10f), Time.deltaTime * smooth);
 
-                //if (orthographicNormalSize - orthographicTargetSize > 0.25f)
-                //{
-                //    cam.orthographicSize = Mathf.Lerp(orthographicNormalSize, orthographicTargetSize, Time.deltaTime * 5f);
-                //}
 
-                cam.orthographicSize = orthographicTargetSize;
-            } 
+                if (cam.orthographicSize >= 1.8f)
+                {
+                    cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, orthographicTargetSize, Time.deltaTime * ogSmooth);
+                }
+            }
         } else
         {
-            cam.transform.position = Vector3.Lerp(currentPos.transform.position,
-                   startPos.transform.position, Time.deltaTime * smooth);
+            if (Vector3.Distance(cam.transform.position, camStartPos) > 0.0001f)
+            {
+                cam.transform.position = Vector3.Lerp(currentPos.transform.position,
+                    camStartPos, Time.deltaTime * smooth);
 
-            cam.orthographicSize = orthographicNormalSize;
+                Debug.Log("test");
+
+            }
+
+            if (cam.orthographicSize <= 5f)
+            {
+                cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, 5f, Time.deltaTime * ogSmooth);
+
+                cam.orthographicSize = orthographicNormalSize;
+            }
+        }
+
+        //Check if a Room is Selected
+        if(selectedRoom != null)
+        {
+            //Set Active
+            canvas.SetActive(true);
+        } else
+        {
+            //Set Inactive
+            canvas.SetActive(false);
         }
 
     }
@@ -101,6 +131,5 @@ public class RoomSelector : MonoBehaviour
     {
         selectedRoom = null;
     }
-
 
 }

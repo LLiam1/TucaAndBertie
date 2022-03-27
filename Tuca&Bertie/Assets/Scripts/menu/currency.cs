@@ -23,6 +23,16 @@ public class currency : MonoBehaviour
                     itemPrice = 10;
                     break;
                 }
+            case "test20":
+                {
+                    itemPrice = 20;
+                    break;
+                }
+            case "test30":
+                {
+                    itemPrice = 30;
+                    break;
+                }
         }
     }
 
@@ -36,4 +46,19 @@ public class currency : MonoBehaviour
         nameT = itemName;
         money -= itemPrice;
     }
+
+    public void PurchaseItem(Item item)
+    {
+        if (money >= item.itemPrice)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(item);
+
+            money -= item.itemPrice;
+        }
+        else
+        {
+            Debug.Log("Not Enough Money!");
+        }
+    }
+        
 }
