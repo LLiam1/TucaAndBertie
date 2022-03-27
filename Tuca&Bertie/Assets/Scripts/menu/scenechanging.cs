@@ -24,6 +24,6 @@ public class scenechanging : MonoBehaviour
 
     public void onBuild()
     {
-        SceneManager.LoadScene("testCreation");
+        SceneManager.LoadScene("SampleScene");
     }
 }

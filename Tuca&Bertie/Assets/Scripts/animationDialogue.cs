@@ -13,10 +13,12 @@ public class animationDialogue : MonoBehaviour
     public string[] sentences;
 
     //first character: animation and resting
+    public string charOne;
     public GameObject talk;
     public GameObject notTalking;
 
     //second character: animation and resting
+    public string charTwo;
     public GameObject talk2;
     public GameObject notTalking2;
 
@@ -30,7 +32,7 @@ public class animationDialogue : MonoBehaviour
     //animation timer
     private float time = 1.5f;
 
-
+    public GameObject button;
     private void Awake()
     {
         //wipes dialogue text
@@ -39,7 +41,7 @@ public class animationDialogue : MonoBehaviour
 
     void Start()
     {
-        whosTalking.text = "Bertie";
+        whosTalking.text = charOne;
         StartCoroutine(Type());
     }
 
@@ -68,6 +70,12 @@ public class animationDialogue : MonoBehaviour
                 //start next sentence
                 NextSentence();
             }
+
+            //button to go to gameplay
+            if (index == sentences.Length - 1)
+            {
+                button.SetActive(true);
+            }
         }
     }
 
@@ -82,7 +90,7 @@ public class animationDialogue : MonoBehaviour
             if (index % 2 == 0)
             {
                 //change character box
-                whosTalking.text = "Bertie";
+                whosTalking.text = charOne;
 
                 //handle talking and not talking animations
                 talk.SetActive(true);
@@ -93,7 +101,7 @@ public class animationDialogue : MonoBehaviour
             else
             {
                 //change character box
-                whosTalking.text = "Tuca";
+                whosTalking.text = charTwo;
 
                 //handle talking and not talking animations
                 talk2.SetActive(true);
