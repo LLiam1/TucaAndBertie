@@ -18,7 +18,7 @@ public class menuTest : MonoBehaviour
         //On Start Keep Menu Closed
         menu.SetActive(false);
         currency.SetActive(false);
-        
+
     }
 
     void Update()
