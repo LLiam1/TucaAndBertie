@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Couch
   itemDesc: This is a couch
   itemPrice: 30
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: 89f89dad94f21364883765581d30a0b9, type: 3}

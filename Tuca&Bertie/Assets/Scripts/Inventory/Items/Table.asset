@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Table
   itemDesc: This is  a Table
   itemPrice: 20
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 21300000, guid: c211e82bbfe7b4dc6b9f55c94a71a55b, type: 3}
