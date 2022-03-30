@@ -13,8 +13,7 @@ public class ShopController : MonoBehaviour
 
     public Transform btnParent;
 
-    public int money = 100;
-
+    public GameObject shopMenu;
 
     private void Start()
     {
@@ -36,20 +35,28 @@ public class ShopController : MonoBehaviour
         }
     }
 
-    public void test(int i)
+    public void ShopOpen()
     {
-        Debug.Log(i);
+        shopMenu.SetActive(true);
     }
+
+
+    public void ShopClose()
+    {
+        shopMenu.SetActive(false);
+    }
+
 
     public void PurchaseItem(Item item)
     {
-        Debug.Log(item.itemName);
 
-        if (money >= item.itemPrice)
+        currency curr = GameObject.FindGameObjectWithTag("Player").GetComponent<currency>();
+
+        if (curr.money >= item.itemPrice)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(item);
 
-            money -= item.itemPrice;
+            curr.money -= item.itemPrice;
         }
         else
         {
