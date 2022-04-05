@@ -35,6 +35,11 @@ public class moneyProduction : MonoBehaviour
         refCash.money += charHolding;
     }
 
+    public void deposit()
+    {
+        refCash.money += charHolding;
+    }
+
     IEnumerator makeMoney()
     {
         yield return new WaitForSeconds(2);
