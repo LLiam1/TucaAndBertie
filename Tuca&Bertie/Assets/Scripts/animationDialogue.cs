@@ -27,7 +27,8 @@ public class animationDialogue : MonoBehaviour
     private int index;
 
     //screen positions
-    private Vector3 offScreen = new Vector3(-7.0f, 0.0f, 0.0f);
+    private Vector3 offScreen1 = new Vector3(7.10f, 0.0f, 0.0f);
+    private Vector3 offScreen2 = new Vector3(-7.0f, 0.0f, 0.0f);
     private Vector3 onScreen = new Vector3(0.0f, 0.0f, 0.0f);
 
     //animation timer
@@ -94,8 +95,8 @@ public class animationDialogue : MonoBehaviour
                 whosTalking.text = charOne;
 
                 //handle talking and not talking animations
-                talk.SetActive(true);
                 notTalking.SetActive(false);
+                talk.SetActive(true);
 
                 talk2.SetActive(false);
             }
@@ -105,9 +106,9 @@ public class animationDialogue : MonoBehaviour
                 whosTalking.text = charTwo;
 
                 //handle talking and not talking animations
-                talk2.SetActive(true);
                 notTalking2.SetActive(false);
-
+                talk2.SetActive(true);
+                
                 talk.SetActive(false);
             }
             text.text += letters;
@@ -139,14 +140,14 @@ public class animationDialogue : MonoBehaviour
         notTalking.SetActive(true);
         notTalking2.SetActive(true);
 
-        if (notTalking.transform.position == offScreen)
+        if (notTalking.transform.position == offScreen1)
         {
-            StartCoroutine(SwapCharacter(notTalking2, offScreen, time));
+            StartCoroutine(SwapCharacter(notTalking2, offScreen2, time));
             StartCoroutine(SwapCharacter(notTalking, onScreen, time));
         }
         else if (notTalking.transform.position == onScreen)
         {
-            StartCoroutine(SwapCharacter(notTalking, offScreen, time));
+            StartCoroutine(SwapCharacter(notTalking, offScreen1, time));
             StartCoroutine(SwapCharacter(notTalking2, onScreen, time));
         }
 
