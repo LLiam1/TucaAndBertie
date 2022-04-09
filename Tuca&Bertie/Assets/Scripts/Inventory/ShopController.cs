@@ -47,9 +47,9 @@ public class ShopController : MonoBehaviour
             int a = i;
 
             tempButton.GetComponent<Button>().onClick.AddListener(delegate { PurchaseItem(shopItems[a]); });
-
-
         }
+
+
     }
 
     public void PurchaseItem(Item item)
