@@ -73,7 +73,7 @@ public class RoomSelector : MonoBehaviour
                 targetPos = selectedRoom.transform;
 
                 //touchedObject should be the object someone touched.
-                Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
+                //Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
             }
         } else
         {
@@ -101,9 +101,6 @@ public class RoomSelector : MonoBehaviour
             {
                 cam.transform.position = Vector3.Lerp(currentPos.transform.position,
                     camStartPos, Time.deltaTime * smooth);
-
-                Debug.Log("test");
-
             }
 
             if (cam.orthographicSize <= 5f)
@@ -115,15 +112,15 @@ public class RoomSelector : MonoBehaviour
         }
 
         //Check if a Room is Selected
-        if(selectedRoom != null)
-        {
-            //Set Active
-            canvas.SetActive(true);
-        } else
-        {
-            //Set Inactive
-            canvas.SetActive(false);
-        }
+        //if(selectedRoom != null)
+        //{
+        //    //Set Active
+        //    canvas.SetActive(true);
+        //} else
+        //{
+        //    //Set Inactive
+        //    canvas.SetActive(false);
+        //}
 
     }
 

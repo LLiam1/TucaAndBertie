@@ -15,6 +15,9 @@ public class ShopController : MonoBehaviour
 
     public int money = 100;
 
+    public Sprite tenSprite, twentySprite, thirtySprite;
+
+
 
     private void Start()
     {
@@ -28,17 +31,25 @@ public class ShopController : MonoBehaviour
 
             goButton.transform.GetChild(0).gameObject.GetComponent<Image>().sprite = shopItems[i].itemSprite;
 
+            switch (shopItems[i].itemPrice)
+            {
+                case 10:
+                    goButton.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = tenSprite;
+                    break;
+                case 20:
+                    goButton.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = twentySprite;
+                    break;
+                case 30:
+                    goButton.transform.GetChild(1).gameObject.GetComponent<Image>().sprite = thirtySprite;
+                    break;
+            }
+
             int a = i;
 
             tempButton.GetComponent<Button>().onClick.AddListener(delegate { PurchaseItem(shopItems[a]); });
 
 
         }
-    }
-
-    public void test(int i)
-    {
-        Debug.Log(i);
     }
 
     public void PurchaseItem(Item item)

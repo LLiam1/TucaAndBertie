@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomSelector : MonoBehaviour
+public class RoomSelector2 : MonoBehaviour
 {
     //Selected Room...
     public GameObject selectedRoom;
