@@ -68,7 +68,7 @@ public class PlayerInventory : MonoBehaviour
     public void OpenInventory()
     {
         //Disable Room Selector
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = false;
+        // GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = false;
 
         DisplayInventory();
     }
@@ -76,7 +76,7 @@ public class PlayerInventory : MonoBehaviour
     public void CloseInventory()
     {
 
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = true;
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = true;
 
     }
 
@@ -134,6 +134,6 @@ public class PlayerInventory : MonoBehaviour
         mainCanvas.GetComponent<UIController>().DisplayInventoryMenu();
 
 
-        //Debug.Log("Inventory Item Selected!");
+        Debug.Log("Inventory Item Selected!");
     }
 }

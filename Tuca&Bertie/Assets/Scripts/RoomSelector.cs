@@ -30,6 +30,8 @@ public class RoomSelector2 : MonoBehaviour
 
     public float smooth;
 
+    public GameObject mainCanvas;
+
     private void Start()
     {
         //Set Starting Camera Position
@@ -77,7 +79,7 @@ public class RoomSelector2 : MonoBehaviour
         {
             if (Vector3.Distance(cam.transform.position, targetPos.position) > 1f)
             {
-                cam.transform.position = Vector3.Lerp(startPos.transform.position,
+                cam.transform.position = Vector3.MoveTowards(startPos.transform.position,
                     new Vector3(targetPos.transform.position.x, targetPos.transform.position.y, -10f), Time.deltaTime * smooth);
 
                 //if (orthographicNormalSize - orthographicTargetSize > 0.25f)
@@ -86,13 +88,18 @@ public class RoomSelector2 : MonoBehaviour
                 //}
 
                 cam.orthographicSize = orthographicTargetSize;
+
+                mainCanvas.GetComponent<UIController>().DisplayGoBackButton(false);
             } 
         } else
         {
-            cam.transform.position = Vector3.Lerp(currentPos.transform.position,
+            cam.transform.position = Vector3.MoveTowards(currentPos.transform.position,
                    startPos.transform.position, Time.deltaTime * smooth);
 
             cam.orthographicSize = orthographicNormalSize;
+
+
+            mainCanvas.GetComponent<UIController>().DisplayGoBackButton(true);
         }
 
     }
