@@ -52,7 +52,10 @@ public class PlayerInventory : MonoBehaviour
                         Debug.Log($"Item Selected: {itemSelected} ");
 
                         if (hit.collider.gameObject.GetComponent<ItemPreset>().SetItem(itemSelected))
-                        { 
+                        {
+                            //Adjust Scale
+                            hit.collider.gameObject.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 1);
+
                             //Remove From Inventory
                             RemoveItem(itemSelected);
 
@@ -136,4 +139,10 @@ public class PlayerInventory : MonoBehaviour
 
         Debug.Log("Inventory Item Selected!");
     }
+
+    public void DeselecteSelectedItem()
+    {
+        itemSelected = null;
+    }
+
 }

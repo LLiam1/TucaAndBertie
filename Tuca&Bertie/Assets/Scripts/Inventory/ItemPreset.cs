@@ -19,7 +19,7 @@ public class ItemPreset : MonoBehaviour
 
     public bool SetItem(Item i)
     {
-        if (itemsAccepted.Contains(i))
+        if (itemsAccepted.Contains(i) && currentItem == null)
         {
             //Set the current Item
             currentItem = i;
