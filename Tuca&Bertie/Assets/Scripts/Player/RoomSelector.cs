@@ -67,13 +67,17 @@ public class RoomSelector : MonoBehaviour
             //Check what it collides with
             if (hit.collider != null)
             {
-                //We should have hit something with a 2D Physics collider!
-                selectedRoom = hit.transform.gameObject;
+                if (hit.collider.tag == "Room")
+                {
 
-                targetPos = selectedRoom.transform;
+                    //We should have hit something with a 2D Physics collider!
+                    selectedRoom = hit.transform.gameObject;
 
-                //touchedObject should be the object someone touched.
-                Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
+                    targetPos = selectedRoom.transform;
+
+                    //touchedObject should be the object someone touched.
+                    //Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
+                }
             }
         } else
         {
@@ -101,9 +105,6 @@ public class RoomSelector : MonoBehaviour
             {
                 cam.transform.position = Vector3.Lerp(currentPos.transform.position,
                     camStartPos, Time.deltaTime * smooth);
-
-                Debug.Log("test");
-
             }
 
             if (cam.orthographicSize <= 5f)
@@ -115,15 +116,15 @@ public class RoomSelector : MonoBehaviour
         }
 
         //Check if a Room is Selected
-        if(selectedRoom != null)
-        {
-            //Set Active
-            canvas.SetActive(true);
-        } else
-        {
-            //Set Inactive
-            canvas.SetActive(false);
-        }
+        //if(selectedRoom != null)
+        //{
+        //    //Set Active
+        //    canvas.SetActive(true);
+        //} else
+        //{
+        //    //Set Inactive
+        //    canvas.SetActive(false);
+        //}
 
     }
 

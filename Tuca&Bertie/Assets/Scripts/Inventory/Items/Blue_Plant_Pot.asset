@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 697df085f2c9d400b81434a1520cee4d, type: 3}
-  m_Name: Table
+  m_Name: Blue_Plant_Pot
   m_EditorClassIdentifier: 
-  itemName: Table
-  itemDesc: This is  a Table
+  itemName: Blue Plant Pot
+  itemDesc: This is a play in a blue pot!
   itemPrice: 10
-  itemSprite: {fileID: 21300000, guid: c211e82bbfe7b4dc6b9f55c94a71a55b, type: 3}
+  itemSprite: {fileID: 21300000, guid: 973b0072d69d94dc58fefd7fa62d7163, type: 3}
