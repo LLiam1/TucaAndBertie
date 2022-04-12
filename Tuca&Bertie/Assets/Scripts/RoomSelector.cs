@@ -54,6 +54,11 @@ public class RoomSelector2 : MonoBehaviour
             //Check what it collides with
             if (hit.collider != null)
             {
+                if(selectedRoom != null)
+                {
+                    return;
+                }
+
                 //We should have hit something with a 2D Physics collider!
                 selectedRoom = hit.transform.gameObject;
 
@@ -72,8 +77,6 @@ public class RoomSelector2 : MonoBehaviour
             targetPos = selectedRoom.transform;
         }
 
-
-        //TODO: Zoom Camera In ON Selected Room
 
         if (selectedRoom != null)
         {
