@@ -61,8 +61,11 @@ public class RoomSelector : MonoBehaviour
             //Put Touch X&Y into Vector2
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
 
+            //Layer Mask
+            int layerMask = LayerMask.GetMask("Rooms");
+
             //Shoot RayCast
-            RaycastHit2D hit = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+            RaycastHit2D hit = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward, Mathf.Infinity, layerMask);
 
             //Check what it collides with
             if (hit.collider != null)

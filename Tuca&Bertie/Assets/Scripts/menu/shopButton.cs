@@ -9,6 +9,7 @@ public class shopButton : MonoBehaviour
     public int price;
 
     currency happy;
+
     // Start is called before the first frame update
     void Start()
     {
