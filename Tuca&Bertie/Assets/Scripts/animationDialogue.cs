@@ -27,9 +27,9 @@ public class animationDialogue : MonoBehaviour
     private int index;
 
     //screen positions
-    private Vector3 offScreen1 = new Vector3(7.10f, 0.0f, 0.0f);
-    private Vector3 offScreen2 = new Vector3(-7.0f, 0.0f, 0.0f);
-    private Vector3 onScreen = new Vector3(0.0f, 0.0f, 0.0f);
+    private Vector3 offScreen1 = new Vector3(7.0f, 0.52f, 0.0f);
+    private Vector3 offScreen2 = new Vector3(-7.0f, 0.52f, 0.0f);
+    private Vector3 onScreen = new Vector3(0.0f, 0.52f, 0.0f);
 
     //animation timer
     private float time = 1.5f;
