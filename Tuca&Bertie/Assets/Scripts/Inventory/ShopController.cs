@@ -58,9 +58,38 @@ public class ShopController : MonoBehaviour
 
         if (money >= item.itemPrice)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(item);
 
+            //Remove Amount from Currency
             money -= item.itemPrice;
+
+            if (item.itemType == Item.ItemType.Item)
+            {
+                //Placeable Item
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInventory>().AddItem(item);
+
+            } else if(item.itemType == Item.ItemType.Room)
+            {
+                //Room Unlocker
+
+                GameObject[] rooms = GameObject.FindGameObjectsWithTag("Room");
+
+
+                //Loop through each room
+                for (int i = 0; i <= rooms.Length - 1; i++)
+                {
+                    //Check if Room ID matches
+                    if(rooms[i].GetComponent<RoomLocker>().roomID == item.roomID)
+                    {
+                        if (rooms[i].GetComponent<RoomLocker>().isRoomUnlocked == true)
+                        {
+                            Debug.Log($"Room:  {rooms[i].name } already Unlocked!");
+                            return;
+                        }
+                        //Unlock Room
+                        rooms[i].GetComponent<RoomLocker>().isRoomUnlocked = true;
+                    }
+                }
+            }
         }
         else
         {

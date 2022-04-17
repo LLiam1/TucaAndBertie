@@ -464,6 +464,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 5
 --- !u!1 &321576480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1398,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 4
 --- !u!1 &956833196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1525,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 3
 --- !u!1 &987763562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,6 +1652,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 2
 --- !u!1 &1121734967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2072,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 1
 --- !u!1 &1228947234
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,6 +2803,7 @@ MonoBehaviour:
   isRoomUnlocked: 0
   unlockRoomPrefab: {fileID: 0}
   lockedSprite: {fileID: 0}
+  roomID: 6
 --- !u!1001 &1647474857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2815,7 +2821,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5777638973563504253, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5777638973626006806, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3073,6 +3079,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -110
       objectReference: {fileID: 0}
+    - target: {fileID: 5777638975639209448, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
+      propertyPath: shopItems.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5777638975639209448, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
+      propertyPath: shopItems.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d297a2abd63749b69025c9f6e39859a, type: 2}
     - target: {fileID: 5777638975639209449, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
       propertyPath: m_SizeDelta.x
       value: 600

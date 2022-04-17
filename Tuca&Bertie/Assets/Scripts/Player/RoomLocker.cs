@@ -13,6 +13,8 @@ public class RoomLocker : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    public int roomID;
+
     // Start is called before the first frame update
     void Start()
     {
