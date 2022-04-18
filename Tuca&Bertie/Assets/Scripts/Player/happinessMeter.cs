@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class happinessMeter : MonoBehaviour
 {
-    float happiness = 1.0f;
+    float happiness = 10.0f;
     const float HAPPINESS_GAIN = .20f;
+
+    const float HAPPINESS_MAX = 20.0f;
+    const float HAPPINESSS_MIN = 0.0f;
 
     //timer stuff increase/decrease happiness over time
     float nextInc;
@@ -13,6 +17,10 @@ public class happinessMeter : MonoBehaviour
     float howLongUntilNotHapp = 25.0f;
 
     public bool completedGoal;
+
+    //VN connection stuff
+    public string character;
+    public string whichButton;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +40,11 @@ public class happinessMeter : MonoBehaviour
         {
             DecreaseHappiness();
         }
+
+        if (happiness == HAPPINESS_MAX)
+        {
+            whichButton = character + "Scene";
+        }
     }
 
     private void IncreaseHappiness()
@@ -39,6 +52,11 @@ public class happinessMeter : MonoBehaviour
         if (Time.time >= nextInc)
         {
             happiness += (happiness * HAPPINESS_GAIN);
+            if (happiness >= HAPPINESS_MAX)
+            {
+                happiness = HAPPINESS_MAX;
+            }
+
             Debug.Log(happiness);
 
             nextInc = Time.time + howLongUntilHapp;
@@ -50,6 +68,10 @@ public class happinessMeter : MonoBehaviour
         if (Time.time >= nextInc)
         {
             happiness -= (happiness * HAPPINESS_GAIN);
+            if(happiness <= HAPPINESSS_MIN)
+            {
+                happiness = HAPPINESSS_MIN;
+            }
             Debug.Log(happiness);
 
             nextInc = Time.time + howLongUntilNotHapp;
