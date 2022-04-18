@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class happinessMeter : MonoBehaviour
 {
-    float happiness = 1.0f;
+    public float happiness = 1.0f;
     const float HAPPINESS_GAIN = .20f;
 
     //timer stuff increase/decrease happiness over time
