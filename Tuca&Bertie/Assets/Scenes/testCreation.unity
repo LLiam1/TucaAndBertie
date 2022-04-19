@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 24598765}
   - component: {fileID: 24598764}
   m_Layer: 5
-  m_Name: Button
+  m_Name: deposit money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -373,6 +373,8 @@ MonoBehaviour:
   refCash: {fileID: 1606143699}
   charCap: 200
   charRate: 2
+  happinessGauge: {fileID: 0}
+  isHappy: 0
 --- !u!212 &760751255
 SpriteRenderer:
   m_ObjectHideFlags: 0

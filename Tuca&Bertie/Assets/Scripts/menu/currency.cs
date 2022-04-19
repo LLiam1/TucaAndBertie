@@ -8,7 +8,7 @@ public class currency : MonoBehaviour
 {
     public TextMeshProUGUI output;
 
-    public int money = 100;
+    public float money = 100;
 
     public int itemPrice;
 
