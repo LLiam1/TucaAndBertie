@@ -25,7 +25,7 @@ public class happinessMeter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        completedGoal = true;
+        completedGoal = false;
         Debug.Log(happiness);
     }
 
@@ -35,15 +35,6 @@ public class happinessMeter : MonoBehaviour
         if (completedGoal)
         {
             IncreaseHappiness();
-        }
-        else
-        {
-            DecreaseHappiness();
-        }
-
-        if (happiness == HAPPINESS_MAX)
-        {
-            whichButton = character + "Scene";
         }
     }
 

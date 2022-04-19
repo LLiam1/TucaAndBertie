@@ -4,56 +4,48 @@ using UnityEngine;
 
 public class RoomSelector : MonoBehaviour
 {
-    //GameObject: Selected Room...
+    //Selected Room...
     public GameObject selectedRoom;
 
-    //Vector3: Input Touch Position
+    //Input Touch Position
     private Vector3 touchPosWorld;
 
-    //Transform: Camera Start Position
+    //Camera Start Position
     public Transform startPos;
 
-    //Transform: Camera Target Position
+    //Camera Target Position
     private Transform targetPos;
 
-    //Transform: Camera Current Pos
+    //Camera Current Pos
     private Transform currentPos;
 
-    //Camera: Game Object
+    //Camera Object
     public Camera cam;
 
-    //Float: Orthographic Target Size
     public float orthographicTargetSize = 1.189422f;
 
     //Float: Normal Orthographic Size
     private float orthographicNormalSize = 5f;
 
-    //Float: Variable to Smooth Calculation of Zoom IN/OUT
     public float smooth;
 
-    //Float: Orthographic Camera Smooth
     public float ogSmooth;
 
-    //Vector3: Cam Starting Pos
-    public Vector3 camStartPos;
+    public GameObject mainCanvas;
 
-    //GameObject: Canvas
-    public GameObject canvas;
-
-    //Bool: Disable Room Selector
     public bool isSelectorActive;
+
+    public Vector3 camStartPos;
 
     private void Start()
     {
         //Set Starting Camera Position
         startPos = cam.transform;
-
-        camStartPos = cam.transform.position;
     }
 
     public void Update()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended && isSelectorActive)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
             //Transform Touch to World Point
             touchPosWorld = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
@@ -62,30 +54,41 @@ public class RoomSelector : MonoBehaviour
             Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
 
             //Layer Mask
-            int layerMask = LayerMask.GetMask("Rooms");
-
+            int roomsMask = LayerMask.GetMask("Rooms");
+ 
             //Shoot RayCast
-            RaycastHit2D hit = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward, Mathf.Infinity, layerMask);
+             RaycastHit2D hit = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward, Mathf.Infinity, roomsMask);
 
             //Check what it collides with
             if (hit.collider != null)
             {
-                if (hit.collider.tag == "Room")
+                if (selectedRoom != null || isSelectorActive == false)
                 {
+                    return;
+                }
 
+                if (hit.collider.gameObject.GetComponent<RoomLocker>().isRoomUnlocked)
+                {
                     //We should have hit something with a 2D Physics collider!
                     selectedRoom = hit.transform.gameObject;
 
                     targetPos = selectedRoom.transform;
 
                     //touchedObject should be the object someone touched.
-                    //Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
+                    Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
                 }
             }
-        } else
+        }
+        else
         {
             currentPos = cam.transform;
         }
+
+        if (selectedRoom != null)
+        {
+            targetPos = selectedRoom.transform;
+        }
+
 
         if (selectedRoom != null)
         {
@@ -102,7 +105,8 @@ public class RoomSelector : MonoBehaviour
                     cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, orthographicTargetSize, Time.deltaTime * ogSmooth);
                 }
             }
-        } else
+        }
+        else
         {
             if (Vector3.Distance(cam.transform.position, camStartPos) > 0.0001f)
             {
@@ -116,18 +120,9 @@ public class RoomSelector : MonoBehaviour
 
                 cam.orthographicSize = orthographicNormalSize;
             }
-        }
 
-        //Check if a Room is Selected
-        //if(selectedRoom != null)
-        //{
-        //    //Set Active
-        //    canvas.SetActive(true);
-        //} else
-        //{
-        //    //Set Inactive
-        //    canvas.SetActive(false);
-        //}
+            mainCanvas.GetComponent<UIController>().DisplayGoBackButton(true);
+        }
 
     }
 
@@ -135,5 +130,6 @@ public class RoomSelector : MonoBehaviour
     {
         selectedRoom = null;
     }
+
 
 }
