@@ -16,4 +16,10 @@ public class CharacterRequests : ScriptableObject
 
     //Request Time Limit
     public float requestTimeLimit;
+
+    //Request Character
+    public RequestsController.Character charType;
+
+    //Request Completition
+    public bool isCompleted = false;
 }
