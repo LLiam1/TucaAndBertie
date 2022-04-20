@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class happinessMeter : MonoBehaviour
 {
-    public float happiness = 1.0f;
+    public float happiness = 15.0f;
     const float HAPPINESS_GAIN = .20f;
+    const float HAPPINESS_MAX = 50.0f;
 
     //timer stuff increase/decrease happiness over time
     float nextInc;
@@ -13,11 +14,12 @@ public class happinessMeter : MonoBehaviour
     float howLongUntilNotHapp = 25.0f;
 
     public bool completedGoal;
+    public string character;
 
     // Start is called before the first frame update
     void Start()
     {
-        completedGoal = true;
+        completedGoal = false;
         Debug.Log(happiness);
     }
 
@@ -28,10 +30,6 @@ public class happinessMeter : MonoBehaviour
         {
             IncreaseHappiness();
         }
-        else
-        {
-            DecreaseHappiness();
-        }
     }
 
     private void IncreaseHappiness()
@@ -39,6 +37,10 @@ public class happinessMeter : MonoBehaviour
         if (Time.time >= nextInc)
         {
             happiness += (happiness * HAPPINESS_GAIN);
+            if(happiness >= HAPPINESS_MAX)
+            {
+                happiness = HAPPINESS_MAX;
+            }
             Debug.Log(happiness);
 
             nextInc = Time.time + howLongUntilHapp;
