@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5a727601d0749f2af5a62570c14984, type: 3}
+  m_Name: GeneralRQ[0]
+  m_EditorClassIdentifier: 
+  requestName: TableRq
+  requestDesc: Looking for a brand new Table!
+  requestItem: {fileID: 11400000, guid: a77d24fc10d2b47989e786d45fdb062e, type: 2}
+  requestTimeLimit: 3000
+  charType: 0
+  isCompleted: 0
