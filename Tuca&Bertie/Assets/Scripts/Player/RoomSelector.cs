@@ -74,6 +74,8 @@ public class RoomSelector : MonoBehaviour
 
                     targetPos = selectedRoom.transform;
 
+                    isSelectorActive = false;
+
                     //touchedObject should be the object someone touched.
                     Debug.Log("GameObject Touched: " + selectedRoom.transform.name);
                 }
@@ -105,6 +107,9 @@ public class RoomSelector : MonoBehaviour
                     cam.orthographicSize = Mathf.SmoothStep(cam.orthographicSize, orthographicTargetSize, Time.deltaTime * ogSmooth);
                 }
             }
+
+
+            mainCanvas.GetComponent<UIController>().DisplayGoBackButton(true);
         }
         else
         {
@@ -121,7 +126,7 @@ public class RoomSelector : MonoBehaviour
                 cam.orthographicSize = orthographicNormalSize;
             }
 
-            mainCanvas.GetComponent<UIController>().DisplayGoBackButton(true);
+            mainCanvas.GetComponent<UIController>().DisplayGoBackButton(false);
         }
 
     }
@@ -129,6 +134,8 @@ public class RoomSelector : MonoBehaviour
     public void RemoveSelectedRoom()
     {
         selectedRoom = null;
+
+        isSelectorActive = true;
     }
 
 
