@@ -15,12 +15,12 @@ public class moneyProduction : MonoBehaviour
 
     void Start()
     {
-        
+        refCash = GameObject.FindGameObjectWithTag("Player").GetComponent<currency>();
     }
 
     void Update()
     {
-        Debug.Log("currency: " + refCash.money);
+        Debug.Log("currency: " + refCash.currencyAmount);
         if (charHolding >= charCap)
         {
             charHolding = charCap;
@@ -36,14 +36,14 @@ public class moneyProduction : MonoBehaviour
     //test doesnt work
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        refCash.money += charHolding;
+        refCash.currencyAmount += charHolding;
     }
 
 
     //allows the user to gain the money
     public void deposit()
     {
-        refCash.money += charHolding;
+        refCash.currencyAmount += charHolding;
     }
 
     //creates the currency for the character

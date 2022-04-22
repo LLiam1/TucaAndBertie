@@ -13,14 +13,14 @@ public class ShopController : MonoBehaviour
 
     public Transform btnParent;
 
-    public int money = 100;
-
     public Sprite tenSprite, twentySprite, thirtySprite;
 
-
+    private currency player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<currency>();
+
         for(int i = 0; i <= shopItems.Count - 1; i++)
         {
             GameObject goButton = Instantiate(buttonPrefab);
@@ -56,11 +56,11 @@ public class ShopController : MonoBehaviour
     {
         Debug.Log(item.itemName);
 
-        if (money >= item.itemPrice)
+        if (player.currencyAmount >= item.itemPrice)
         {
 
             //Remove Amount from Currency
-            money -= item.itemPrice;
+            player.currencyAmount -= item.itemPrice;
 
             if (item.itemType == Item.ItemType.Item)
             {
