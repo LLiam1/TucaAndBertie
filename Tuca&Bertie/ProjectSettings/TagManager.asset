@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PresetItemPlacement
   - Room
+  - Lock
   layers:
   - Default
   - TransparentFX

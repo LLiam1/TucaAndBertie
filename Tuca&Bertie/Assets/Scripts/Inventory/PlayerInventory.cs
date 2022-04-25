@@ -23,6 +23,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject mainCanvas;
 
 
+
     private void Start()
     {
         roomSelector = gameObject.GetComponent<RoomSelector>();
