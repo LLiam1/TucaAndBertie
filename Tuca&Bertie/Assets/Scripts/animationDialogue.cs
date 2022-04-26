@@ -33,8 +33,6 @@ public class animationDialogue : MonoBehaviour
 
     //animation timer
     private float time = 1.5f;
-
-    public GameObject button;
     private void Awake()
     {
         //wipes dialogue text
@@ -69,14 +67,13 @@ public class animationDialogue : MonoBehaviour
 
             if (Input.GetMouseButton(0))
             {
+                if (index == sentences.Length - 1)
+                {
+                    SceneManager.LoadScene("SampleScene");
+                }
+
                 //start next sentence
                 NextSentence();
-            }
-
-            //button to go to gameplay
-            if (index == sentences.Length - 1)
-            {
-                button.SetActive(true);
             }
         }
     }
