@@ -13,15 +13,15 @@ public class ShopController : MonoBehaviour
 
     public Transform btnParent;
 
-    public int money = 100;
-
     public Sprite tenSprite, twentySprite, thirtySprite;
 
-
+    private currency player;
 
     private void Start()
     {
-        for(int i = 0; i <= shopItems.Count - 1; i++)
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<currency>();
+
+        for (int i = 0; i <= shopItems.Count - 1; i++)
         {
             GameObject goButton = Instantiate(buttonPrefab);
             goButton.transform.SetParent(btnParent, false);
@@ -48,19 +48,16 @@ public class ShopController : MonoBehaviour
 
             tempButton.GetComponent<Button>().onClick.AddListener(delegate { PurchaseItem(shopItems[a]); });
         }
-
-
     }
-
     public void PurchaseItem(Item item)
     {
         Debug.Log(item.itemName);
 
-        if (money >= item.itemPrice)
+        if (player.currencyAmount >= item.itemPrice)
         {
 
             //Remove Amount from Currency
-            money -= item.itemPrice;
+            player.currencyAmount -= item.itemPrice;
 
             if (item.itemType == Item.ItemType.Item)
             {

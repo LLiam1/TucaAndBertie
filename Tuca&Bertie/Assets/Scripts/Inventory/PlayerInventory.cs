@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
+    private RoomSelector roomSelector;
 
     //List of Players Inventory Items
     public List<Item> inventoryItems = new List<Item>();
@@ -22,15 +23,18 @@ public class PlayerInventory : MonoBehaviour
     public GameObject mainCanvas;
 
 
+
     private void Start()
     {
+        roomSelector = gameObject.GetComponent<RoomSelector>();
+
         CloseInventory();
     }
 
     private void Update()
     {
         //Check if Item is Selected
-        if (itemSelected != null)
+        if (itemSelected != null && roomSelector.selectedRoom != null)
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
