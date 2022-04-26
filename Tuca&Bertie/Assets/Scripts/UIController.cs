@@ -11,23 +11,22 @@ public class UIController : MonoBehaviour
 
     public GameObject goBackBtn;
 
-    public GameObject roomBuyConfirmMenu;
+    public GameObject dialogue;
 
-    public TextMeshProUGUI buyConfrimText;
-
-    public Button confirmBuyBtn;
+    public TextMeshProUGUI charTalking;
+    public TextMeshProUGUI charText;
 
     private void Start()
     {
         //Disable Menu's on Start
         shopMenu.SetActive(false);
         inventoryMenu.SetActive(false);
-        roomBuyConfirmMenu.SetActive(false);
+        dialogue.SetActive(false);
     }
 
     private void Update()
     {
-        if(shopMenu.activeSelf || inventoryMenu.activeSelf || roomBuyConfirmMenu.activeSelf)
+        if (shopMenu.activeSelf || inventoryMenu.activeSelf || dialogue.activeSelf)
         {
             //Disable RoomSelector
             GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = false;
@@ -41,6 +40,11 @@ public class UIController : MonoBehaviour
 
     public void DisplayShopMenu()
     {
+        if (dialogue.activeSelf)
+        {
+            return;
+        }
+
         if (inventoryMenu.activeSelf)
         {
             inventoryMenu.SetActive(false);
@@ -59,6 +63,11 @@ public class UIController : MonoBehaviour
 
     public void DisplayInventoryMenu()
     {
+
+        if (dialogue.activeSelf)
+        {
+            return;
+        }
         if (shopMenu.activeSelf)
         {
             shopMenu.SetActive(false);
@@ -80,24 +89,5 @@ public class UIController : MonoBehaviour
     public void DisplayGoBackButton(bool active)
     {
         goBackBtn.SetActive(active);
-    }
-
-    public void DisplayConfirmBuyMenu()
-    {
-        if (roomBuyConfirmMenu.activeSelf)
-        {
-            roomBuyConfirmMenu.SetActive(false);
-        }
-
-        roomBuyConfirmMenu.SetActive(!roomBuyConfirmMenu.activeSelf);
-
-        if (roomBuyConfirmMenu.activeSelf)
-        {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = false;
-        }
-        else
-        {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<RoomSelector>().isSelectorActive = true;
-        }
     }
 }
