@@ -16,6 +16,10 @@ public class CharacterController : MonoBehaviour
         General,
         Tuca,
         Bertie,
+        Draca,
+        Joel,
+        Speckles,
+        DapperDog
     }
 
     public RequestsController.Character currentCharacter;
@@ -60,7 +64,14 @@ public class CharacterController : MonoBehaviour
                 {
                     if (hit.collider.tag == "Character")
                     {
+                        if(roomSelector.selectedRoom.name == gameObject.transform.parent.name)
+                        {
                             DisplayRequestDialogue();
+                        } else
+                        {
+                            Debug.Log($" {roomSelector.selectedRoom.name} | {gameObject.transform.parent.name }");
+                        }
+
                     }
                 }
             }
@@ -79,7 +90,8 @@ public class CharacterController : MonoBehaviour
 
     public void DisplayRequestDialogue()
     {
-        //TODO Display Happiness Meter
+        uiController.dialogue.SetActive(true);
+
         uiController.charTalking.text = currentRequest.charType.ToString().ToUpper();
 
         uiController.charText.text = currentRequest.requestDesc;

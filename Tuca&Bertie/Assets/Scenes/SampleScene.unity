@@ -163,6 +163,7 @@ MonoBehaviour:
   mainCanvas: {fileID: 691065770}
   isSelectorActive: 1
   camStartPos: {x: 0, y: 0, z: -10}
+  character: 0
 --- !u!4 &27250228
 Transform:
   m_ObjectHideFlags: 0
@@ -819,6 +820,7 @@ MonoBehaviour:
   roomID: 5
   roomData: {fileID: 0}
   mainCanvas: {fileID: 691065770}
+  character: 4
 --- !u!1 &424607686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1774,6 +1776,7 @@ MonoBehaviour:
   roomID: 4
   roomData: {fileID: 0}
   mainCanvas: {fileID: 691065770}
+  character: 3
 --- !u!1 &956833196
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,6 +1907,7 @@ MonoBehaviour:
   roomID: 3
   roomData: {fileID: 0}
   mainCanvas: {fileID: 691065770}
+  character: 2
 --- !u!1 &987763562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2034,6 +2038,7 @@ MonoBehaviour:
   roomID: 2
   roomData: {fileID: 0}
   mainCanvas: {fileID: 691065770}
+  character: 5
 --- !u!1 &1055829496
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2412,7 @@ MonoBehaviour:
   roomID: 1
   roomData: {fileID: 0}
   mainCanvas: {fileID: 691065770}
+  character: 6
 --- !u!1 &1228947234
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,6 +3206,7 @@ MonoBehaviour:
   roomID: 6
   roomData: {fileID: 11400000, guid: 6d297a2abd63749b69025c9f6e39859a, type: 2}
   mainCanvas: {fileID: 691065770}
+  character: 1
 --- !u!1 &1719036507
 GameObject:
   m_ObjectHideFlags: 0

@@ -19,10 +19,13 @@ public class RoomLocker : MonoBehaviour
 
     public GameObject mainCanvas;
 
+    public RequestsController.Character character;
+
     // Start is called before the first frame update
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
 
         ShowLock(isRoomUnlocked);
     }

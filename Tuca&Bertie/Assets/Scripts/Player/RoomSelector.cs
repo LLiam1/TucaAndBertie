@@ -37,6 +37,8 @@ public class RoomSelector : MonoBehaviour
 
     public Vector3 camStartPos;
 
+    public RequestsController.Character character;
+
     private void Start()
     {
         //Set Starting Camera Position

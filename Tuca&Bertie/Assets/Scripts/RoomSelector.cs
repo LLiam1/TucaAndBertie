@@ -32,6 +32,8 @@ public class RoomSelector2 : MonoBehaviour
 
     public GameObject mainCanvas;
 
+    public CharacterController.Character character;
+
     private void Start()
     {
         //Set Starting Camera Position
