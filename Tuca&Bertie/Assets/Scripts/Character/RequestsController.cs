@@ -13,6 +13,15 @@ public class RequestsController : MonoBehaviour
     //List of Request for any Character
     public List<CharacterRequests> generalRequests = new List<CharacterRequests>();
 
+    //List of Request for any Character
+    public List<CharacterRequests> dracaRequests = new List<CharacterRequests>();
+    //List of Request for any Character
+    public List<CharacterRequests> joelRequests = new List<CharacterRequests>();
+    //List of Request for any Character
+    public List<CharacterRequests> specklesRequests = new List<CharacterRequests>();
+    //List of Request for any Character
+    public List<CharacterRequests> dapperDogRequests = new List<CharacterRequests>();
+
     //Keep track of Completed Requests
     private List<CharacterRequests> completedRequests = new List<CharacterRequests>();
 
@@ -23,6 +32,10 @@ public class RequestsController : MonoBehaviour
         General,
         Tuca,
         Bertie,
+        Draca,
+        Joel,
+        Speckles,
+        DapperDog
     }
 
 
@@ -53,6 +66,18 @@ public class RequestsController : MonoBehaviour
                 case Character.Bertie:
                     rq = bertieRequests[0];
                     break;
+                case Character.Draca:
+                    rq = dracaRequests[0];
+                    break;
+                case Character.Speckles:
+                    rq = specklesRequests[0];
+                    break;
+                case Character.DapperDog:
+                    rq = dapperDogRequests[0];
+                    break;
+                case Character.Joel:
+                    rq = joelRequests[0];
+                    break;
             }
         }
 
@@ -75,6 +100,18 @@ public class RequestsController : MonoBehaviour
                 break;
             case Character.Bertie:
                 bertieRequests.Remove(rq);
+                break;
+            case Character.Draca:
+                dracaRequests.Remove(rq);
+                break;
+            case Character.Speckles:
+                specklesRequests.Remove(rq);
+                break;
+            case Character.DapperDog:
+                dapperDogRequests.Remove(rq);
+                break;
+            case Character.Joel:
+                joelRequests.Remove(rq);
                 break;
         }
     }

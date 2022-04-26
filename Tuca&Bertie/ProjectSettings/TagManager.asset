@@ -7,6 +7,9 @@ TagManager:
   - PresetItemPlacement
   - Room
   - Lock
+  - RequestController
+  - Character
+  - UIController
   layers:
   - Default
   - TransparentFX
@@ -16,7 +19,7 @@ TagManager:
   - UI
   - Rooms
   - ItemPresets
-  - 
+  - Character
   - 
   - 
   - 
