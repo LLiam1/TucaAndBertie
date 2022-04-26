@@ -60,20 +60,7 @@ public class CharacterController : MonoBehaviour
                 {
                     if (hit.collider.tag == "Character")
                     {
-                        if (isDialogueDone == false)
-                        {
-                            if (dialoguePrefab != null)
-                            {
-                                DisplayDialogue();
-
-                                isDialogueDone = true;
-                            }
-                        }
-                        else
-                        {
                             DisplayRequestDialogue();
-                        }
-
                     }
                 }
             }
@@ -93,5 +80,10 @@ public class CharacterController : MonoBehaviour
     public void DisplayRequestDialogue()
     {
         //TODO Display Happiness Meter
+        uiController.charTalking.text = currentRequest.charType.ToString().ToUpper();
+
+        uiController.charText.text = currentRequest.requestDesc;
+
+        roomSelector.RemoveSelectedRoom();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI charTalking;
     public TextMeshProUGUI charText;
+
+    public GameObject pauseBtn;
 
     private void Start()
     {
@@ -89,5 +92,18 @@ public class UIController : MonoBehaviour
     public void DisplayGoBackButton(bool active)
     {
         goBackBtn.SetActive(active);
+
+        if (goBackBtn.activeSelf)
+        {
+            pauseBtn.SetActive(false);
+        } else
+        {
+            pauseBtn.SetActive(true);
+        }
+    }
+
+    public void PauseBtn()
+    {
+        SceneManager.LoadScene("ChapterSelect");
     }
 }

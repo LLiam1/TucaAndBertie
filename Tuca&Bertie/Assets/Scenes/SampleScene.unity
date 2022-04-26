@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6652d00b2f78a478884f4a11cc65dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRequest: {fileID: 0}
+  currentRequest: {fileID: 11400000, guid: 036e4486f55a34e749fabb7d3cfd0fb7, type: 2}
   currentCharacter: 3
   isDialogueDone: 0
   dialoguePrefab: {fileID: 3415823318942396613, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
