@@ -134,6 +134,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &133157714 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3104489278005224482, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+  m_PrefabInstance: {fileID: 3104489278004826745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &306670605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3104489277347862133, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+  m_PrefabInstance: {fileID: 3104489278004826745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &356522159
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +158,7 @@ GameObject:
   - component: {fileID: 356522160}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: UIController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,11 +515,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &829094957 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3104489276996771807, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+  m_PrefabInstance: {fileID: 3104489278004826745}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1536192862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 275519233141821013, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
   m_PrefabInstance: {fileID: 275519232528400139}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1918483395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 49810050530753794, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+  m_PrefabInstance: {fileID: 3104489278004826745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2038734989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3104489278123151369, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+  m_PrefabInstance: {fileID: 3104489278004826745}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038734991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038734989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea666faba543e73429ae97e0e3df3ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 800229157}
+  whosTalking: {fileID: 70073263}
+  sentences:
+  - Hey the most fabulous plant in the world. You think we can talk.
+  - .............................................
+  - Great thanks............so as you know me and Kara broke up and it got me thinking
+    about myself and you always seem so sure of yourself I wanted to ask for some
+    advice.
+  - ............................................
+  - Oh come on Draca you give me the best advice just help me out again. PLEAAASSSEEE.
+  - ............................................
+  - Oh thanks girl you are the 2nd best. First best being Bertie of course. Also
+    yes this is some new shorts. I think they really bring out my bodacious booty.
+  - .............................................
+  - 'You''re right lets get back on track. After the breakup I was thinking about
+    what I did wrong and how I can fix myself so people will wanna be with me. '
+  - ...............................................
+  - What do you mean Draca?
+  - .........................*blows smoke*.................................
+  - OH MY GOD YOU ARE SO ABSOLUTELY RIGHT!! I have to stop looking at myself as someone
+    that should get fixed. If they can't accept me for my fabulousness then boy or
+    girl bye. I need to love myself and when I find someone who can love me as much
+    as I love myself then that's true love right there.
+  - ...............................................
+  - Oh thnks girl you give me such the best advice. It ws great chatting with you.
+    Talk to you later girlfriend. Bye turtles.
+  - ......................bye..........................
+  charOne: TUCA
+  talk: {fileID: 133157714}
+  notTalking: {fileID: 829094957}
+  charTwo: DRACA
+  talk2: {fileID: 1918483395}
+  notTalking2: {fileID: 306670605}
 --- !u!1001 &275519232528400139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,6 +675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue Box
       objectReference: {fileID: 0}
+    - target: {fileID: 7909241655359789920, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
 --- !u!1001 &3104489278004826745
@@ -614,6 +688,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 49810050530753794, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 62022065034004551, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -658,6 +736,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 209633800784025611, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3104489278123151368, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
       propertyPath: text
       value: 
@@ -674,5 +756,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tuca&DracaConvo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4881262359112140312, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1941213480755364856, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}

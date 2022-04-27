@@ -32,7 +32,6 @@ public class DialogueScript : MonoBehaviour
 
     private UIController ui;
 
-    public GameObject button;
     private void Awake()
     {
         ui = GameObject.FindGameObjectWithTag("UIController").GetComponent<UIController>();
