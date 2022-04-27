@@ -62,7 +62,7 @@ public class CharacterController : MonoBehaviour
                 //Check what it collides with
                 if (hit.collider != null)
                 {
-                    if (hit.collider.tag == "Character")
+                    if (hit.collider.tag == "Character" &&  currentRequest != null && roomSelector.selectedRoom != null)
                     {
                         if(roomSelector.selectedRoom.name == gameObject.transform.parent.name)
                         {
@@ -73,6 +73,8 @@ public class CharacterController : MonoBehaviour
                         }
 
                     }
+
+                    Debug.Log(hit.collider.name);
                 }
             }
         }
@@ -91,6 +93,7 @@ public class CharacterController : MonoBehaviour
     public void DisplayRequestDialogue()
     {
         uiController.dialogue.SetActive(true);
+        uiController.closebtn.SetActive(true);
 
         uiController.charTalking.text = currentRequest.charType.ToString().ToUpper();
 

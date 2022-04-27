@@ -1193,6 +1193,7 @@ MonoBehaviour:
   charTalking: {fileID: 582074404227144668}
   charText: {fileID: 582074403866666838}
   pauseBtn: {fileID: 7381587131893954148}
+  closebtn: {fileID: 7350547215510045720}
 --- !u!1 &5777638974473041219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,6 +2058,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1983756681348479366, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5934825697584035856}
+    - target: {fileID: 1983756681348479366, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983756681348479366, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UIController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1983756681348479366, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
 --- !u!1 &582074405278126382 stripped
@@ -2091,3 +2108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7350547215510045720 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7909241655359789920, guid: 023098033a6cf4c3598e795db27c0ba6, type: 3}
+  m_PrefabInstance: {fileID: 847000940036218744}
+  m_PrefabAsset: {fileID: 0}

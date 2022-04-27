@@ -42,18 +42,11 @@ public class RequestsController : MonoBehaviour
     //This Function will Set a Requests to the Character in the Room
     public CharacterRequests SetRequest(Character ch)
     {
-        //Random Number between 0 and 1
-        int rand = Random.Range(0, 1);
 
         CharacterRequests rq = null;
 
         //0 = General Request | 1 = Character Specific Requests
-        if(rand == 0)
-        {
-            //General Request
-            rq = generalRequests[0];
-        } else
-        {
+       
             //Specific Character Reequest
             switch (ch)
             {
@@ -79,7 +72,6 @@ public class RequestsController : MonoBehaviour
                     rq = joelRequests[0];
                     break;
             }
-        }
 
         //Return Requests
         return rq;

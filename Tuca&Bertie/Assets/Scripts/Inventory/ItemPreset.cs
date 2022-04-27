@@ -27,6 +27,8 @@ public class ItemPreset : MonoBehaviour
             //Update Sprite Rengerer
             spriteRenderer.sprite = currentItem.itemSprite;
 
+            spriteRenderer.color = Color.white;
+
             return true;
 
         } else

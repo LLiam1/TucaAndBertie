@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyDisplay: {fileID: 57696913}
-  currencyAmount: 100
+  currencyAmount: 10000
 --- !u!114 &57696913 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2395696936563622287, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
@@ -429,14 +429,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tucaRequests:
-  - {fileID: 11400000, guid: 036e4486f55a34e749fabb7d3cfd0fb7, type: 2}
+  - {fileID: 11400000, guid: 9ff648644832d4527867ec29a896007c, type: 2}
   bertieRequests:
-  - {fileID: 11400000, guid: 3b8b376ca7e174f1a8847bbb1a010025, type: 2}
+  - {fileID: 11400000, guid: 940516b089a994480a9dce9ea8697021, type: 2}
   generalRequests:
-  - {fileID: 11400000, guid: 036e4486f55a34e749fabb7d3cfd0fb7, type: 2}
-  dracaRequests: []
+  - {fileID: 0}
+  dracaRequests:
+  - {fileID: 11400000, guid: d185f9f2986b849a6b6144834d3d930f, type: 2}
   joelRequests: []
-  specklesRequests: []
+  specklesRequests:
+  - {fileID: 11400000, guid: 6d01f4ae80bb54db58e82a94eca20b81, type: 2}
   dapperDogRequests: []
 --- !u!4 &251531541
 Transform:
@@ -464,13 +466,14 @@ GameObject:
   - component: {fileID: 256143841}
   - component: {fileID: 256143840}
   - component: {fileID: 256143843}
+  - component: {fileID: 256143844}
   m_Layer: 8
   m_Name: DapperDog
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &256143840
 Animator:
   serializedVersion: 3
@@ -568,9 +571,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentRequest: {fileID: 0}
-  currentCharacter: 0
+  currentCharacter: 6
   isDialogueDone: 0
   dialoguePrefab: {fileID: 0}
+--- !u!61 &256143844
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256143839}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.26, y: 2.1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.26, y: 2.1}
+  m_EdgeRadius: 0
 --- !u!1 &282414939
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,13 +612,14 @@ GameObject:
   - component: {fileID: 282414941}
   - component: {fileID: 282414940}
   - component: {fileID: 282414943}
+  - component: {fileID: 282414944}
   m_Layer: 8
   m_Name: Joel
   m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &282414940
 Animator:
   serializedVersion: 3
@@ -690,6 +720,32 @@ MonoBehaviour:
   currentCharacter: 0
   isDialogueDone: 0
   dialoguePrefab: {fileID: 0}
+--- !u!61 &282414944
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282414939}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.38, y: 2.44}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.38, y: 2.44}
+  m_EdgeRadius: 0
 --- !u!1 &316718742
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac3cfd0a07c406f860ec05fafe3ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRoomUnlocked: 1
+  isRoomUnlocked: 0
   roomLock: {fileID: 1815875053}
   roomID: 5
   roomData: {fileID: 0}
@@ -839,7 +895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &424607687
 Transform:
   m_ObjectHideFlags: 0
@@ -848,14 +904,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 424607686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.07, y: -0.03, z: 0}
-  m_LocalScale: {x: 0.4999988, y: 0.50000197, z: 1}
+  m_LocalPosition: {x: -0.001, y: -0.312, z: 0}
+  m_LocalScale: {x: 0.085, y: 0.085, z: 1}
   m_Children: []
   m_Father: {fileID: 888521335}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &424607688
-CircleCollider2D:
+--- !u!61 &424607688
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -867,9 +923,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00000011920929, y: -0.00000047683716}
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 3.84}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 3.84, y: 3.84}
+  m_EdgeRadius: 0
 --- !u!114 &424607689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,12 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsAccepted:
-  - {fileID: 11400000, guid: d2c1af08d4cb54455b3bbc9194ba139a, type: 2}
   - {fileID: 11400000, guid: 3eae21a9e9ac54a13b6ed2847defc898, type: 2}
-  - {fileID: 11400000, guid: a77d24fc10d2b47989e786d45fdb062e, type: 2}
-  - {fileID: 11400000, guid: c82f722f535e4486d8d55c4572d0e315, type: 2}
-  - {fileID: 11400000, guid: 30e3dcab1daad436b8afc2b955a6712c, type: 2}
-  - {fileID: 11400000, guid: 103b1ea3fb2fb4ea78c7155d828558c2, type: 2}
 --- !u!212 &424607690
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -929,8 +990,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.29773024, g: 0.8962264, b: 0.21560161, a: 1}
+  m_Sprite: {fileID: 21300000, guid: da5b8cef9d78a4eec83bf5f3adfc4871, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1492,7 +1553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6652d00b2f78a478884f4a11cc65dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRequest: {fileID: 11400000, guid: 036e4486f55a34e749fabb7d3cfd0fb7, type: 2}
+  currentRequest: {fileID: 11400000, guid: d185f9f2986b849a6b6144834d3d930f, type: 2}
   currentCharacter: 3
   isDialogueDone: 0
   dialoguePrefab: {fileID: 3415823318942396613, guid: 38b8d96c1a45246d0946afa4f048f9c0, type: 3}
@@ -1545,7 +1606,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &887827495
 Transform:
   m_ObjectHideFlags: 0
@@ -1554,8 +1615,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 887827494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.03, z: 0}
-  m_LocalScale: {x: 0.4999988, y: 0.50000197, z: 1}
+  m_LocalPosition: {x: 0.016, y: -0.199, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 956833197}
   m_RootOrder: 1
@@ -1589,12 +1650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsAccepted:
-  - {fileID: 11400000, guid: d2c1af08d4cb54455b3bbc9194ba139a, type: 2}
-  - {fileID: 11400000, guid: 3eae21a9e9ac54a13b6ed2847defc898, type: 2}
-  - {fileID: 11400000, guid: a77d24fc10d2b47989e786d45fdb062e, type: 2}
-  - {fileID: 11400000, guid: c82f722f535e4486d8d55c4572d0e315, type: 2}
   - {fileID: 11400000, guid: 30e3dcab1daad436b8afc2b955a6712c, type: 2}
-  - {fileID: 11400000, guid: 103b1ea3fb2fb4ea78c7155d828558c2, type: 2}
 --- !u!212 &887827498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1635,8 +1691,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 0.29773024, g: 0.8962264, b: 0.21560161, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 8a4120b3aa58b492b96b2902727e4d35, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2051,6 +2107,7 @@ GameObject:
   - component: {fileID: 1055829498}
   - component: {fileID: 1055829497}
   - component: {fileID: 1055829500}
+  - component: {fileID: 1055829501}
   m_Layer: 8
   m_Name: Speckles
   m_TagString: Character
@@ -2154,10 +2211,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6652d00b2f78a478884f4a11cc65dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRequest: {fileID: 0}
-  currentCharacter: 0
+  currentRequest: {fileID: 11400000, guid: 6d01f4ae80bb54db58e82a94eca20b81, type: 2}
+  currentCharacter: 5
   isDialogueDone: 0
   dialoguePrefab: {fileID: 0}
+--- !u!61 &1055829501
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055829496}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4, y: 4.08}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4, y: 4.08}
+  m_EdgeRadius: 0
 --- !u!1 &1143252014 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 582074405278126382, guid: a63179c9f9aec45c6858e93a447646fc, type: 3}
@@ -2175,6 +2258,7 @@ GameObject:
   - component: {fileID: 1166027058}
   - component: {fileID: 1166027057}
   - component: {fileID: 1166027060}
+  - component: {fileID: 1166027061}
   m_Layer: 8
   m_Name: Tuca
   m_TagString: Character
@@ -2278,10 +2362,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6652d00b2f78a478884f4a11cc65dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRequest: {fileID: 0}
-  currentCharacter: 0
+  currentRequest: {fileID: 11400000, guid: 9ff648644832d4527867ec29a896007c, type: 2}
+  currentCharacter: 1
   isDialogueDone: 0
   dialoguePrefab: {fileID: 0}
+--- !u!61 &1166027061
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1166027056}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.6100001, y: 4.5}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6100001, y: 4.5}
+  m_EdgeRadius: 0
 --- !u!1 &1215346696
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,7 +2517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eac3cfd0a07c406f860ec05fafe3ab5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRoomUnlocked: 1
+  isRoomUnlocked: 0
   roomLock: {fileID: 581563533}
   roomID: 1
   roomData: {fileID: 0}
@@ -2544,6 +2654,7 @@ GameObject:
   - component: {fileID: 1268273816}
   - component: {fileID: 1268273815}
   - component: {fileID: 1268273818}
+  - component: {fileID: 1268273819}
   m_Layer: 8
   m_Name: Bertie
   m_TagString: Character
@@ -2647,10 +2758,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6652d00b2f78a478884f4a11cc65dc75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRequest: {fileID: 0}
-  currentCharacter: 0
+  currentRequest: {fileID: 11400000, guid: 940516b089a994480a9dce9ea8697021, type: 2}
+  currentCharacter: 2
   isDialogueDone: 0
   dialoguePrefab: {fileID: 0}
+--- !u!61 &1268273819
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268273814}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.4, y: 4.08}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.4, y: 4.08}
+  m_EdgeRadius: 0
 --- !u!1 &1356288130
 GameObject:
   m_ObjectHideFlags: 0

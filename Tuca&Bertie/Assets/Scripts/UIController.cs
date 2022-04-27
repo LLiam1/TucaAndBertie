@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI charText;
 
     public GameObject pauseBtn;
+    public GameObject closebtn;
+
 
     private void Start()
     {
@@ -105,5 +107,11 @@ public class UIController : MonoBehaviour
     public void PauseBtn()
     {
         SceneManager.LoadScene("ChapterSelect");
+    }
+
+    public void CloseBtn()
+    {
+        dialogue.SetActive(false);
+        closebtn.SetActive(false);
     }
 }

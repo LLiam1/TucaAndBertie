@@ -142,8 +142,6 @@ public class PlayerInventory : MonoBehaviour
 
         //Close Inventory
         mainCanvas.GetComponent<UIController>().DisplayInventoryMenu();
-
-
         Debug.Log("Inventory Item Selected!");
     }
 
