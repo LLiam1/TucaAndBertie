@@ -11,11 +11,24 @@ public class ItemPreset : MonoBehaviour
 
     private Item currentItem;
 
+    public PlayerInventory playerInventory;
+
+    bool activated;
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
+    private void Update()
+    {
+        if (PlayerInventory.itemSelected == itemsAccepted[0])
+        {
+            spriteRenderer.color = Color.yellow;
+        } else if (!activated)
+        {
+            spriteRenderer.color = Color.black;
+        }
+    }
 
     public bool SetItem(Item i)
     {
@@ -29,6 +42,7 @@ public class ItemPreset : MonoBehaviour
 
             spriteRenderer.color = Color.white;
 
+            activated = true;
             return true;
 
         } else

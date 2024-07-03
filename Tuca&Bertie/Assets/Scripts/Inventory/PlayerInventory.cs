@@ -18,12 +18,9 @@ public class PlayerInventory : MonoBehaviour
 
     public List<GameObject> listItemButtons = new List<GameObject>();
 
-    public Item itemSelected;
+    static public Item itemSelected;
 
     public GameObject mainCanvas;
-
-
-
     private void Start()
     {
         roomSelector = gameObject.GetComponent<RoomSelector>();
@@ -57,9 +54,11 @@ public class PlayerInventory : MonoBehaviour
                     {
                         //Touched on PlaceHolder Item
                         Debug.Log($"Item Selected: {itemSelected} ");
+                        
 
                         if (hit.collider.gameObject.GetComponent<ItemPreset>().SetItem(itemSelected))
                         {
+
                             //Adjust Scale
                             hit.collider.gameObject.GetComponent<Transform>().localScale = new Vector3(0.1f, 0.1f, 1);
 
@@ -139,6 +138,7 @@ public class PlayerInventory : MonoBehaviour
         //Set Item Selected
         itemSelected = item;
 
+        
 
         //Close Inventory
         mainCanvas.GetComponent<UIController>().DisplayInventoryMenu();

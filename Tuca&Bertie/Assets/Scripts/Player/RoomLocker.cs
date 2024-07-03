@@ -26,7 +26,6 @@ public class RoomLocker : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-
         ShowLock(isRoomUnlocked);
     }
 

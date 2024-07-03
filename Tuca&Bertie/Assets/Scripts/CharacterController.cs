@@ -43,7 +43,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (roomSelector.isSelectorActive && playerInventory.itemSelected == null)
+        if (roomSelector.isSelectorActive && PlayerInventory.itemSelected == null)
         {
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {

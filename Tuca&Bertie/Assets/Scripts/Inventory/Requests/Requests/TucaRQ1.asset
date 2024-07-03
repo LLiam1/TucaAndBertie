@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5a727601d0749f2af5a62570c14984, type: 3}
   m_Name: TucaRQ1
   m_EditorClassIdentifier: 
-  requestName: Tuca Chair
-  requestDesc: I'm looking for a chair to relax!
-  requestItem: {fileID: 11400000, guid: 103b1ea3fb2fb4ea78c7155d828558c2, type: 2}
+  requestName: Tuca Table
+  requestDesc: I'm looking for a table to do work!
+  requestItem: {fileID: 11400000, guid: a77d24fc10d2b47989e786d45fdb062e, type: 2}
   requestTimeLimit: 0
   charType: 1
   isCompleted: 0

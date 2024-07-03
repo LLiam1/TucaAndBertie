@@ -15,6 +15,8 @@ public class ShopController : MonoBehaviour
 
     public Sprite tenSprite, twentySprite, thirtySprite;
 
+    public TextMeshProUGUI currencyUI;
+
     private currency player;
 
     private void Start()
@@ -59,6 +61,8 @@ public class ShopController : MonoBehaviour
             //Remove Amount from Currency
             player.currencyAmount -= item.itemPrice;
 
+            StartCoroutine(displayTakenCash(item.itemPrice));   
+
             if (item.itemType == Item.ItemType.Item)
             {
                 //Placeable Item
@@ -92,5 +96,14 @@ public class ShopController : MonoBehaviour
         {
             Debug.Log("Not Enough Money!");
         }
+    }
+
+    IEnumerator displayTakenCash(int cash)
+    {
+        currencyUI.text = "$" + cash.ToString();  
+        
+        yield return new WaitForSeconds(.6f);
+
+        currencyUI.text = "";
     }
 }

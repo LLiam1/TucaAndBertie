@@ -10,6 +10,7 @@ TagManager:
   - RequestController
   - Character
   - UIController
+  - currency
   layers:
   - Default
   - TransparentFX

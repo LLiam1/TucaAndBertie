@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestName: Speckles Wine
   requestDesc: Looking for a Turtle to deliver some wine!
-  requestItem: {fileID: 11400000, guid: d2c1af08d4cb54455b3bbc9194ba139a, type: 2}
-  requestTimeLimit: 0
+  requestItem: {fileID: 11400000, guid: 30e3dcab1daad436b8afc2b955a6712c, type: 2}
+  requestTimeLimit: 50000
   charType: 5
   isCompleted: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RequestsController : MonoBehaviour
 {
+    public happinessMeter meter;
+
     //List of Request for Tuca
     public List<CharacterRequests> tucaRequests = new List<CharacterRequests>();
 
@@ -85,24 +87,31 @@ public class RequestsController : MonoBehaviour
         switch (ch)
         {
             case Character.General:
+                meter.completedGoal = true;
                 generalRequests.Remove(rq);
                 break;
             case Character.Tuca:
+                meter.completedGoal = true;
                 tucaRequests.Remove(rq);
                 break;
             case Character.Bertie:
+                meter.completedGoal = true;
                 bertieRequests.Remove(rq);
                 break;
             case Character.Draca:
+                meter.completedGoal = true;
                 dracaRequests.Remove(rq);
                 break;
             case Character.Speckles:
+                meter.completedGoal = true;
                 specklesRequests.Remove(rq);
                 break;
             case Character.DapperDog:
+                meter.completedGoal = true;
                 dapperDogRequests.Remove(rq);
                 break;
             case Character.Joel:
+                meter.completedGoal = true;
                 joelRequests.Remove(rq);
                 break;
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class happinessMeter : MonoBehaviour
@@ -16,6 +17,11 @@ public class happinessMeter : MonoBehaviour
     public bool completedGoal;
     public string character;
 
+    public currency currency;
+    public int timer = 0;
+
+    public TextMeshProUGUI currencyUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,17 @@ public class happinessMeter : MonoBehaviour
         {
             IncreaseHappiness();
         }
+
+        if (timer % 1000 == 0 && timer != 0)
+        {
+            if (happiness >= 15.0f)
+            {
+                currency.currencyAmount += 20;
+                StartCoroutine(displayGivenCash(20));
+            }
+        }
+
+        timer++;
     }
 
     private void IncreaseHappiness()
@@ -45,6 +62,15 @@ public class happinessMeter : MonoBehaviour
 
             nextInc = Time.time + howLongUntilHapp;
         }
+    }
+
+    IEnumerator displayGivenCash(int cash)
+    {
+        currencyUI.text = "$" + cash.ToString();
+
+        yield return new WaitForSeconds(.6f);
+
+        currencyUI.text = "";
     }
 
     private void DecreaseHappiness()

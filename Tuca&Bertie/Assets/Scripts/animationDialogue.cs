@@ -164,4 +164,10 @@ public class animationDialogue : MonoBehaviour
             SceneManager.LoadScene("SampleScene");
         }
     }
+
+    public void skipDialogue()
+    {
+        SceneManager.LoadScene("SampleScene");
+        Debug.Log("clicked the button");
+    }
 }
